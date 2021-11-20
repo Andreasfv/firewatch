@@ -47,6 +47,7 @@ export default function MCanvas(props) {
             let tempMatrice = matrix;
             console.log(data);
             data.getAllFires.map((fire) => {
+                //Dette gir ikke mening, det blir riktig hvis jeg gjør det motsatt av all fornuft?? y, x blir x, y etterpå??
                 tempMatrice[fire.Y - 1][fire.X - 1].push(fire);
                 console.log(tempMatrice[fire.Y - 1][fire.X - 1]);
             })

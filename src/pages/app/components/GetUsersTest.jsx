@@ -4,6 +4,9 @@ import {
   } from "@apollo/client";
 import React from "react";
 
+// TODO REMOVE: Currently here just as a copy paste of fetching.
+// TODO Fi
+
 export default function getFires() {
     const {loading, error, data } = useQuery(GET_FIRES, {
         variables: {
