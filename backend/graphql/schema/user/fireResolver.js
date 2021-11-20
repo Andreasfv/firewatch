@@ -10,11 +10,11 @@ const resolvers = {
                 })
             })
         },
-        getAllFires: (root) => {
+        getAllFires: (params) => {
             return new Promise((resolve, reject) => {
                 Fire.find((err, fires) => {
                     if(err) reject(err)
-                    else resolve(fires);
+                    else console.log(params),resolve(fires);
                 })
             })
         }

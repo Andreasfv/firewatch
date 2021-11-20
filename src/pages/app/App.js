@@ -3,6 +3,7 @@ import './App.css';
 import GetUsersTest from "./components/GetUsersTest"
 import Login from "../../components/login/Login"
 import Button from "react-bootstrap/Button"
+import InfoTable from '../../components/frontpage/infoTable';
 import { useState } from "react";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <p>
           Edit <code>APOLLLLOLOOO?</code> and save to reload.
         </p>
+        <InfoTable />
         <GetUsersTest />
         <Login props={{show: show, setShow: setShow, mordi: "MORDI"}}/>
         <a

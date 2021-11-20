@@ -1,21 +1,51 @@
 import {gql} from "apollo-server-express";
 
 const typeDefs = gql`
+    enum Month {
+        jan
+        feb
+        mar
+        apr
+        may
+        jun
+        jul
+        aug
+        sep
+        oct
+        nov
+        dec
+    }
+    
+    enum Day {
+        mon
+        tue
+        wed
+        thu
+        fri
+        sat
+        sun
+    }
+
+    enum Sort {
+        asc
+        desc
+    }
+
     type Fire {
         _id: String
-        x: Float!
-        y: Float!
-        day: String!
-        month: String!
-        ffmc: Float!
-        dmc: Float!
-        dc: Float!
-        isi: Float!
+        X: Int!
+        Y: Int!
+        day: Day!
+        month: Month!
+        FFMC: Float!
+        DMC: Float!
+        DC: Float!
+        ISI: Float!
         temp: Float!
-        rh: Float!
+        RH: Float!
         wind: Float!
         rain: Float!
-        rea: Float!
+        area: Float!
     }
 """
     input UserInput {
@@ -32,19 +62,19 @@ const typeDefs = gql`
     type Mutation {
         createFire(        
             _id: String!,
-            x: Float!,
-            y: Float!,
+            X: Int!,
+            Y: Int!,
             day: String!,
             month: String!,
-            ffmc: Float!,
-            dmc: Float!,
-            dc: Float!,
-            isi: Float!,
+            FFMC: Float!,
+            DMC: Float!,
+            DC: Float!,
+            ISI: Float!,
             temp: Float!,
-            rh: Float!,
+            RH: Float!,
             wind: Float!,
             rain: Float!,
-            rea: Float!
+            area: Float!
             ): Fire
     }
 `

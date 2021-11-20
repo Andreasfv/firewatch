@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 export const fireSchema = new mongoose.Schema({
-    x: {
+    X: {
         type: Number,
         required: true,
     },
-    y: {
+    Y: {
         type: Number,
         required: true,
     },
@@ -17,20 +17,21 @@ export const fireSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    ffmc: {
+    FFMC: {
         type: {
             type: Number,
             required: true,
         },
-    dmc: {
+    },
+    DMC: {
         type: Number,
         required: true
     },
-    dc: {
+    DC: {
         type: Number,
         required: true
     },
-    isi: {
+    ISI: {
         type: Number,
         required: true
     },
@@ -38,7 +39,7 @@ export const fireSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    rh: {
+    RH: {
         type: Number,
         required: true
     },
@@ -53,7 +54,5 @@ export const fireSchema = new mongoose.Schema({
     area: {
         type: Number,
         required: true
-    }
-
     }
 })
