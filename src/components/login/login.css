@@ -1,0 +1,7 @@
+.popup {
+    position: absolute;
+    margin: auto auto;
+    padding: 15px;
+    background: white;
+    color: black;
+}
