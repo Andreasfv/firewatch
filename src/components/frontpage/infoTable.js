@@ -10,7 +10,7 @@ export default function InfoTable() {
         <Table striped bordered hover>
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>#xd</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Username</th>
