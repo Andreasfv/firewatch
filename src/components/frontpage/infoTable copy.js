@@ -23,7 +23,7 @@ export default function InfoTable() {
                 sort: "asc"
             }
         }
-    }, () => {console.log(data)})
+    })
     if (loading) {
         return <> LOADING </>
     }
@@ -45,7 +45,7 @@ export default function InfoTable() {
             <TableBody>
               {rows.map((row) => (
                 <TableRow
-                  key={row._id}
+                  key={row.month + row.day + row.RH}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component="th" scope="row">

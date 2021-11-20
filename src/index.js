@@ -4,9 +4,6 @@ import './index.css';
 import dotenv from "dotenv";
 import App from './pages/app/App'
 import reportWebVitals from './tests/web-vitals/reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from "./pages/app/components/header/Header"
 
 import {
   BrowserRouter as Router,
@@ -33,7 +30,6 @@ console.log(process.env.REACT_APP_DB_URL)
 
 ReactDOM.render(
   <Router>
-    <Header/>
     <ApolloProvider client = {client}>
       <Route path="/">
         <App />

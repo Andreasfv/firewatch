@@ -1,0 +1,39 @@
+.map {
+    width: 875px;
+    height: 535px;
+    background-image: url("../../../../images/Montesinho.png");
+}
+
+map:last-child{
+    flex-direction: right;
+}
+
+.row {
+    width: 886px;
+    height: 60px;
+}
+
+
+.block {
+    width: 55px;
+    height: 60px;
+    margin-left: 29px;
+    margin-right: 20px;
+    text-align: center;
+    vertical-align: middle; 
+    color: black;
+    display: inline-block;
+}
+.row > :first-child {
+    width: 35px;
+    margin-left: -5px;
+}
+
+.row > :last-child {
+    width: 35px;
+    margin-right: 0px;
+}
+
+.block:hover {
+    color: pink;
+}

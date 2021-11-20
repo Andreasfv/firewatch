@@ -5,6 +5,7 @@ import {
 export const GET_FIRES = gql`
     query GetFires {
         getAllFires {
+          _id
           month
           day
           temp
@@ -12,6 +13,8 @@ export const GET_FIRES = gql`
           wind
           rain
           area
+          X
+          Y
         }
     }
     `
