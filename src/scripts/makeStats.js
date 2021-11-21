@@ -1,5 +1,7 @@
 import validateFireData from "./validateData"
 
+//Creates that stats for a region provided with an array of datasets.
+//Will validate each object in the array and if it's invalid skip it.
 const makeStats = (data) => {
     let stats = {
         avgRH: 0,

@@ -13,14 +13,18 @@ Path to /FireWatch_andreas/ and then run:
 this should get both the server and the website up and running.
 
 
+While making the app I was looking at the data and initially planned to make a table with paging, filtering and sorting. Hence the choice of GraphQL and MaterialUI. After setting up the initial fetch for the data I had an idea and I went with it. I made a map instead. It might not show of as much technical ability but it was much more fun to make and made more sense of the information at a glance for me.
+
 
 Technologies
 
 Frontend
-    The frontend is built with Apollo Client, React and Material UI. Apollo provides easy querying, refetching and mutating with hook functionality for React. MUI has easy to use and complete elements for tables, popups and other UI elements.
+    Apollo Client, React & MaterialUI
+
+    The frontend is built with Apollo Client, React and Material UI. Apollo provides easy querying, refetching and mutating with hook functionality for React. MUI has easy to use and complete elements for tables, popups and other UI elements. 
 
 Backend
-    The backend is develooped with mongoDB as the database, mongoose to handle schemas and validation for the NoSQL database. The server is an Apollo Server, GraphQL and Express server. 
+    Express, Apollo Server, GraphQL, MongoDB & Mongoose
 
-    Apollo server, express, GraphQL
-    MongoDB & Mongoose
+    The backend is develooped with mongoDB as the database, mongoose to handle schemas and validation for the NoSQL database. The server is an Apollo Server, GraphQL and Express server. Even though I have Mongoose I manage most validation with GraphQL.
+
