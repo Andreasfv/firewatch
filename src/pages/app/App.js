@@ -18,7 +18,7 @@ function App() {
         <p>Map over wildfires in the Montesinho Park. </p>
         <p>Hover your mouse over the squares for more info.</p>
         <div className="map">
-          <MCanvas setHoverData = {setHoverData} width="886px" height="549px"/>
+          <MCanvas reload= {open} setHoverData = {setHoverData} width="886px" height="549px"/>
           <InfoPanel data = {hoverData} />
         </div>
         <InputModal open = {open} handleClose={handleClose} />

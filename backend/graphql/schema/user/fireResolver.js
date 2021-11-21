@@ -34,7 +34,7 @@ const resolvers = {
                     else {
                         resolve(newFire); 
                         Fire.find((err, docs) => {
-                            console.log(docs)
+                            console.log("wawi, finito")
                         })
                     };
                 }))

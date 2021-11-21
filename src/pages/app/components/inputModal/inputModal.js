@@ -6,6 +6,7 @@ import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import { Select, MenuItem, InputLabel, FormControl } from '@mui/material';
 import { useMutation } from '@apollo/client';
+import { CREATE_FIRE } from '../../../../scripts/queries';
 import validateFireData from '../../../../scripts/validateData';
 
 
@@ -20,20 +21,21 @@ const style = {
     boxShadow: 24,
     p: 4,
 };
-
+const inputVals = {
+    X: "",
+    Y: "",
+    day: "",
+    month: "",
+    temp: "",
+    RH: "",
+    wind: "",
+    rain: "",
+    area: "",
+}
 export default function InputModal(props) {
     const [error, setError] = useState(false);
-    const [inputs, setInputs] = useState({
-        X: "",
-        Y: "",
-        day: "",
-        month: "",
-        temp: "",
-        RH: "",
-        wind: "",
-        rain: "",
-        area: "",
-    })
+    const [inputs, setInputs] = useState(inputVals)
+    const [createFire, {data, loading, queryError}] = useMutation(CREATE_FIRE)
     const { open, handleClose } = props;
 
     const handleChange = event => {
@@ -48,8 +50,21 @@ export default function InputModal(props) {
     const handleSubmit = () => {
         console.log(inputs)
         if (validateFireData(inputs).value == false) {
+            console.log(error.error)
             setError(validateFireData(inputs))
+            return;
         }
+        let data = inputs;
+        data.wind = Number(data.wind)
+        data.rain = Number(data.wind)
+        data.RH = Number(data.RH);
+        data.area = Number(data.area)
+        data.temp = Number(data.temp);
+        setInputs(inputVals)
+        createFire({variables: inputs}).then(() => {
+            handleClose();
+        });
+
     }
 
     return (

@@ -4,11 +4,13 @@ import { of } from "zen-observable";
 
 export default function MapBlock(props) {
     props = props.props
+    console.log(props.data)
     const blockRef = createRef();
 
     const onBlockClick = () => {
         if(props.empty) return
     }
+
     const onBlockEnter = () => {
         if(props.empty) return
         props.setHoverData({hovered: true, data: props.data});
@@ -17,7 +19,7 @@ export default function MapBlock(props) {
         <div onClick = {()=> {onBlockClick()}}
             onMouseEnter = {()=> {onBlockEnter()}}
              className="block" 
-             key={(props.x+1) + "x" + (props.y+1)}>
+             key={props._id}>
                  {props.data.length > 0 ? props.data.length : null}
         </div>
     )

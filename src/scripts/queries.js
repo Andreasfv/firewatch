@@ -22,28 +22,37 @@ export const GET_FIRES = gql`
     }
     `
 export const CREATE_FIRE = gql`
-    mutation CreateFire(
-      $month: String!
-      $day: String!
-      $temp: Float!
-      $RH: Float!
-      $wind: Float!
-      $rain: Float!
-      $area: Float!
-      $X: Int!
-      $Y: Int!
-      ) {
-        createFire(
-          month: $month, 
-          day: $day, 
-          temp: $temp, 
-          RH: $RH, 
-          wind: $wind, 
-          rain: $rain, 
-          area: $area, 
-          X: $X, 
-          Y: $Y
-        )
-
-    }
+mutation CreateFire(
+  $X: Int!
+  $day: String!
+  $month: String!
+  $temp: Float!
+  $RH: Float!
+  $wind: Float!
+  $rain: Float!
+  $area: Float!
+  $Y: Int!
+) {
+  createFire(
+    X: $X
+    day: $day
+    month: $month
+    temp: $temp
+    RH: $RH
+    wind: $wind
+    rain: $rain
+    area: $area
+    Y: $Y
+  ) {
+    X
+    Y
+    day
+    month
+    temp
+    wind
+    RH
+    rain
+    area
+  }
+}
 `
