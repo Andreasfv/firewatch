@@ -1,13 +1,13 @@
-import logo from '../../images/logo/logo.svg';
 import './App.css';
 import GetUsersTest from "./components/GetUsersTest"
 import InfoTable from '../../components/frontpage/infoTable';
 import { useState } from "react";
 import MCanvas from './components/map/mCanvas';
+import InfoPanel from './components/infoPanel/infoPanel';
 
 function App() {
-  console.log(process.env.DB_URL)
   const [show, setShow] = useState(true);
+  const [hoverData, setHoverData] = useState({hovered: false, data: null})
   return (
     <div className="App">
       
@@ -15,7 +15,10 @@ function App() {
         <p>
           Map over wildfires in the Montesinho Park. Click the squares for more info.
         </p>
-        <MCanvas width="886px" height="549px"/>
+        <div>
+          <MCanvas setHoverData = {setHoverData} width="886px" height="549px"/>
+          <InfoPanel data = {hoverData} />
+        </div>
       </header>
     </div>
   );
