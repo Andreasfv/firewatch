@@ -22,12 +22,15 @@ const resolvers = {
 
     Mutation: {
         createFire: (root, data) => {
-            console.log(data, root)
+            console.log("Query gotten! ",data)
             //Make sure data var = {x: Number, y: Number etc}
             const newFire = new Fire(data)
             return new Promise((resolve, reject) => {
                 newFire.save((err => {
-                    if(err) {reject(err)}
+                    if(err) {
+                        console.log(err)
+                        reject(err)
+                    }
                     else {
                         resolve(newFire); 
                         Fire.find((err, docs) => {

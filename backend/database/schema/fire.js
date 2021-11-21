@@ -20,20 +20,20 @@ export const fireSchema = new mongoose.Schema({
     FFMC: {
         type: {
             type: Number,
-            required: true,
+            required: false,
         },
     },
     DMC: {
         type: Number,
-        required: true
+        required: false
     },
     DC: {
         type: Number,
-        required: true
+        required: false
     },
     ISI: {
         type: Number,
-        required: true
+        required: false
     },
     temp: {
         type: Number,

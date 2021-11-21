@@ -37,10 +37,10 @@ const typeDefs = gql`
         Y: Int!
         day: Day!
         month: Month!
-        FFMC: Float!
-        DMC: Float!
-        DC: Float!
-        ISI: Float!
+        FFMC: Float
+        DMC: Float
+        DC: Float
+        ISI: Float
         temp: Float!
         RH: Float!
         wind: Float!
@@ -61,15 +61,14 @@ const typeDefs = gql`
 
     type Mutation {
         createFire(        
-            _id: String!,
             X: Int!,
             Y: Int!,
             day: String!,
             month: String!,
-            FFMC: Float!,
-            DMC: Float!,
-            DC: Float!,
-            ISI: Float!,
+            FFMC: Float,
+            DMC: Float,
+            DC: Float,
+            ISI: Float,
             temp: Float!,
             RH: Float!,
             wind: Float!,

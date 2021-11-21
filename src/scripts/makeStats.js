@@ -2,8 +2,6 @@ import validateFireData from "./validateData"
 
 const makeStats = (data) => {
 
-    console.log("firedoff", data)
-
     let stats = {
         avgRH: 0,
         avgArea: 0,

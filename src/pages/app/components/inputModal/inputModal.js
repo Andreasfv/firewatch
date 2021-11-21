@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
+import { useMutation } from '@apollo/client';
 
 
 const style = {
@@ -34,7 +35,6 @@ export default function InputModal(props) {
 
     const handleChange = event => {
         const value = event.target.value;
-        console.log(value)
         setInputs({
             [event.target.name]: value,
         })
