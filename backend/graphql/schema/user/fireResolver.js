@@ -22,19 +22,18 @@ const resolvers = {
 
     Mutation: {
         createFire: (root, data) => {
-            console.log("Query gotten! ",data)
-            //Make sure data var = {x: Number, y: Number etc}
+            console.log("Attempting to create new Fire",data)
             const newFire = new Fire(data)
             return new Promise((resolve, reject) => {
                 newFire.save((err => {
                     if(err) {
-                        console.log(err.err)
+                        console.log(err)
                         reject(err)
                     }
                     else {
                         resolve(newFire); 
                         Fire.find((err, docs) => {
-                            console.log("wawi, finito")
+                            console.log("Creation of new Fire successfull!")
                         })
                     };
                 }))

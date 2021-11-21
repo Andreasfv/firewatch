@@ -63,8 +63,8 @@ const typeDefs = gql`
         createFire(        
             X: Int!,
             Y: Int!,
-            day: String!,
-            month: String!,
+            day: Day!,
+            month: Month!,
             FFMC: Float,
             DMC: Float,
             DC: Float,

@@ -1,6 +1,6 @@
 import {
-    gql
-  } from "@apollo/client";
+  gql
+} from "@apollo/client";
 
 
 // TODO 
@@ -22,37 +22,37 @@ export const GET_FIRES = gql`
     }
     `
 export const CREATE_FIRE = gql`
-mutation CreateFire(
-  $X: Int!
-  $day: String!
-  $month: String!
-  $temp: Float!
-  $RH: Float!
-  $wind: Float!
-  $rain: Float!
-  $area: Float!
-  $Y: Int!
-) {
-  createFire(
-    X: $X
-    day: $day
-    month: $month
-    temp: $temp
-    RH: $RH
-    wind: $wind
-    rain: $rain
-    area: $area
-    Y: $Y
-  ) {
-    X
-    Y
-    day
-    month
-    temp
-    wind
-    RH
-    rain
-    area
-  }
-}
+    mutation CreateFire(
+      $X: Int!
+      $day: Day!
+      $month: Month!
+      $temp: Float!
+      $RH: Float!
+      $wind: Float!
+      $rain: Float!
+      $area: Float!
+      $Y: Int!
+    ) {
+      createFire(
+        X: $X
+        day: $day
+        month: $month
+        temp: $temp
+        RH: $RH
+        wind: $wind
+        rain: $rain
+        area: $area
+        Y: $Y
+      ) {
+        X
+        Y
+        day
+        month
+        temp
+        wind
+        RH
+        rain
+        area
+      }
+    }
 `

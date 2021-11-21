@@ -8,13 +8,13 @@ const validateFireData = (data) => {
     //
     try {
         if(typeof data !== "object" && !Array.isArray(data)) throw new Error("Invalid variable type, not an object")
-        if (data == undefined || data == null) throw new Error("Invalid variable type, not an object")
 
         for (let key of Object.keys(data)){
             if(!fireKeys.includes(key) && key == " ") throw new Error(`${key} is an invalid object key`)
         }
+
         if (isNaN(data.RH)) throw new Error("RH is not a number")
-        if (data.RH < 15 || data.RH >= 100) throw new Error("RH is invalid, must be between 15 and 100")
+        if (data.RH < 15 || data.RH >= 100) throw new Error("RH is invalid, must be a number between 15 and 100")
 
         if (isNaN(data.area) && data.area) throw new Error("area is not a number or invalid amount")
         if (data.area < 0 || data.area > 1090.84) throw new Error("area is invalid, number must be between 0 and 1090.84")
@@ -25,9 +25,9 @@ const validateFireData = (data) => {
         if (!months.includes(data.month)) throw new Error("Month has to be a valid month with 3string notation, ie: 'jan', input: ", data.month)
 
         if (isNaN(data.rain)) throw new Error("area is not a number")
-        if(data.rain < 0.0 || data.rain > 6.4) throw new Error("Rain is an invalid amount, valid is between 0.0 and 6.4")
+        if(data.rain < 0.0 || data.rain > 6.4) throw new Error("Rain is an invalid amount, must be a number between 0.0 and 6.4")
         if (isNaN(data.temp)) throw new Error("temp is not a number")
-        if(data.temp < 2.2 || data.temp > 33.30) throw new Error("Temperature is an invalid amount, valid is between 0.4 and 33.3")
+        if(data.temp < 2.2 || data.temp > 33.30) throw new Error("Temperature is an invalid amount, must be a number between 0.4 and 33.3")
         if (isNaN(data.wind)) throw new Error("wind is not a number")
         if(data.wind < 0.40 || data.wind > 9.4) throw new Error("Wind is an invalid amount, 0.4 to 9.4 is valid")
 

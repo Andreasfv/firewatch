@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -14,25 +13,25 @@ export default function InfoPanel(props) {
     const [loaded, setLoaded] = useState(false);
 
 
-    useEffect(()=> {
+    useEffect(() => {
         setStats(makeStats(data.data));
     }, [data])
 
     return (
-        <Box sx={{minWidth: 300}}>
+        <Box sx={{ minWidth: 300 }}>
             <Card variant="outlined">
                 <>
                     {
-                        stats ? 
+                        stats ?
                             <CardContent>
                                 <Typography >
                                     Average statistics over {data.data.length} fires
                                 </Typography>
-                                <Typography> 
+                                <Typography>
                                     RH: {stats.avgRH}{" "}
-                                    Wind: {stats.avgWind}{" "} 
+                                    Wind: {stats.avgWind}{" "}
                                     Temp: {stats.avgTemp}{" "}
-                                    Area: {stats.avgArea}{" "} 
+                                    Area: {stats.avgArea}{" "}
                                 </Typography>
                                 <Typography>
                                     Maximum values
@@ -53,7 +52,7 @@ export default function InfoPanel(props) {
                                     Area: {stats.minArea}{" "}
                                 </Typography>
                             </CardContent>
-                        : "No stats loaded yet"
+                            : "No stats loaded yet"
                     }
                 </>
             </Card>

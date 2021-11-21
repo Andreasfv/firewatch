@@ -1,7 +1,6 @@
 import './App.css';
-import Button from '@mui/material/Button';
 import { useState } from "react";
-import MCanvas from './components/map/mCanvas';
+import Map from './components/map/map';
 import InfoPanel from './components/infoPanel/infoPanel';
 import InputModal from './components/inputModal/inputModal';
 
@@ -18,7 +17,7 @@ function App() {
         <p>Map over wildfires in the Montesinho Park. </p>
         <p>Hover your mouse over the squares for more info.</p>
         <div className="map">
-          <MCanvas reload= {open} setHoverData = {setHoverData} width="886px" height="549px"/>
+          <Map reload= {open} setHoverData = {setHoverData} width="886px" height="549px"/>
           <InfoPanel data = {hoverData} />
         </div>
         <InputModal open = {open} handleClose={handleClose} />

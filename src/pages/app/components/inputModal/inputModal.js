@@ -35,7 +35,7 @@ const inputVals = {
 export default function InputModal(props) {
     const [error, setError] = useState(false);
     const [inputs, setInputs] = useState(inputVals)
-    const [createFire, {data, loading, queryError}] = useMutation(CREATE_FIRE)
+    const [createFire, { data, loading, queryError }] = useMutation(CREATE_FIRE)
     const { open, handleClose } = props;
 
     const handleChange = event => {
@@ -61,8 +61,11 @@ export default function InputModal(props) {
         data.area = Number(data.area)
         data.temp = Number(data.temp);
         setInputs(inputVals)
-        createFire({variables: inputs}).then(() => {
+        createFire({ variables: inputs }).then(() => {
             handleClose();
+        }).catch((err) => {
+            console.log(err);
+            setError(err)
         });
 
     }
@@ -220,8 +223,9 @@ export default function InputModal(props) {
                             onChange={handleChange}
                         />
                     </div>
-                    <div> 
+                    <div>
                         <Typography>
+                            {queryError ? queryError : null}
                             {`${error.error}`}
                         </Typography>
                     </div>
