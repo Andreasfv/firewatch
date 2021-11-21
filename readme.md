@@ -19,12 +19,12 @@ While making the app I was looking at the data and initially planned to make a t
 Technologies
 
 Frontend
-    Apollo Client, React & MaterialUI
+Apollo Client, React & MaterialUI
 
-    The frontend is built with Apollo Client, React and Material UI. Apollo provides easy querying, refetching and mutating with hook functionality for React. MUI has easy to use and complete elements for tables, popups and other UI elements. 
+The frontend is built with Apollo Client, React and Material UI. Apollo provides easy querying, refetching and mutating with hook functionality for React. MUI has easy to use and complete elements for tables, popups and other UI elements. 
 
 Backend
-    Express, Apollo Server, GraphQL, MongoDB & Mongoose
+Express, Apollo Server, GraphQL, MongoDB & Mongoose
 
-    The backend is develooped with mongoDB as the database, mongoose to handle schemas and validation for the NoSQL database. The server is an Apollo Server, GraphQL and Express server. Even though I have Mongoose I manage most validation with GraphQL.
+The backend is develooped with mongoDB as the database, mongoose to handle schemas and validation for the NoSQL database. The server is an Apollo Server, GraphQL and Express server. Even though I have Mongoose I manage most validation with GraphQL.
 
