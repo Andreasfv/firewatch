@@ -8,11 +8,9 @@ export default function MapBlock(props) {
 
     const onBlockClick = () => {
         if(props.empty) return
-        console.log(props);
     }
     const onBlockEnter = () => {
         if(props.empty) return
-        console.log(props.x, props.y, props.data)
         props.setHoverData({hovered: true, data: props.data});
     }
     return(

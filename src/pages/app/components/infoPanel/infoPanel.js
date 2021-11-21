@@ -13,23 +13,53 @@ import makeStats from '../../../../scripts/makeStats';
 import { useEffect } from 'react';
 
 export default function InfoPanel(props) {
-    let data = props.data.data
-    const [error, setError] = useState(false);
-    const [stats, setStats] = useState(null)
+    let data = props.data
+    const [stats, setStats] = useState(null);
+    const [loaded, setLoaded] = useState(false);
+
 
     useEffect(()=> {
-        if(validateFireData(data)) console.log(makeStats(data, setError))
-    },)
+        console.log("hello?")
+        setStats(makeStats(data.data));
+    }, [data])
 
     return (
         <Box sx={{minWidth: 300}}>
             <Card variant="outlined">
                 <>
-                    <CardContent>
-                        <Typography sx={{fontSize: 13 }} color="text.primary" gutterBottom>
-                            {error ? error : Array.isArray(data) ? data[0].area : "mordi"}
-                        </Typography>
-                    </CardContent>
+                    {
+                        stats ? 
+                            <CardContent>
+                                <Typography >
+                                    Average statistics over {data.data.length} fires
+                                </Typography>
+                                <Typography> 
+                                    RH: {stats.avgRH}{" "}
+                                    Wind: {stats.avgWind}{" "} 
+                                    Temp: {stats.avgTemp}{" "}
+                                    Area: {stats.avgArea}{" "} 
+                                </Typography>
+                                <Typography>
+                                    Maximum values
+                                </Typography>
+                                <Typography>
+                                    RH: {stats.maxRH}{" "}
+                                    Wind: {stats.maxWind}{" "}
+                                    Temp: {stats.maxTemp}{" "}
+                                    Area: {stats.maxArea}{" "}
+                                </Typography>
+                                <Typography>
+                                    Minimum Values
+                                </Typography>
+                                <Typography>
+                                    RH: {stats.minRH}{" "}
+                                    Wind: {stats.minWind}{" "}
+                                    Temp: {stats.minTemp}{" "}
+                                    Area: {stats.minArea}{" "}
+                                </Typography>
+                            </CardContent>
+                        : "No stats loaded yet"
+                    }
                 </>
             </Card>
         </Box>
