@@ -9,30 +9,25 @@ import { useState } from 'react';
 import { typography } from '@mui/system';
 import "./infoPanel.css"
 import validateFireData from '../../../../scripts/validateData';
+import makeStats from '../../../../scripts/makeStats';
+import { useEffect } from 'react';
 
 export default function InfoPanel(props) {
-    let data = props.data;
-    console.log(data)
+    let data = props.data.data
     const [error, setError] = useState(false);
     const [stats, setStats] = useState(null)
-    const makeStats = (data) => {
-        if (!Array.isArray(data)){
-            console.log("Supplied parameter is not an array!")
-            setError("Supplied variable is not an array!")
-        }
 
+    useEffect(()=> {
+        if(validateFireData(data)) console.log(makeStats(data, setError))
+    },)
 
-        Object.keys(arr[0])
-    }
-
-    if(error) return <div>{error}</div>
     return (
         <Box sx={{minWidth: 300}}>
             <Card variant="outlined">
                 <>
                     <CardContent>
                         <Typography sx={{fontSize: 13 }} color="text.primary" gutterBottom>
-                            {Array.isArray(data.data) ? data.data[0].area : "mordi"}
+                            {error ? error : Array.isArray(data) ? data[0].area : "mordi"}
                         </Typography>
                     </CardContent>
                 </>

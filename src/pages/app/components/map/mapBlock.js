@@ -12,7 +12,7 @@ export default function MapBlock(props) {
     }
     const onBlockEnter = () => {
         if(props.empty) return
-        console.log(props.x, props.y)
+        console.log(props.x, props.y, props.data)
         props.setHoverData({hovered: true, data: props.data});
     }
     return(
@@ -20,7 +20,7 @@ export default function MapBlock(props) {
             onMouseEnter = {()=> {onBlockEnter()}}
              className="block" 
              key={(props.x+1) + "x" + (props.y+1)}>
-                 {props.data.length}
+                 {props.data.length > 0 ? props.data.length : null}
         </div>
     )
 }
