@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const {DB_URL} = require("../../config")
 const { fireSchema } = require("./schema/fire");
 
-//I know ;) not the safest to post to github
-mongoose.connect("mongodb+srv://Andreas:fastforward24@lyche.2h5du.mongodb.net/FireWatch?retryWrites=true&w=majority", {
+//I know ;) not the safest to post to github, (throwawaypassord)
+mongoose.connect("mongodb+srv://Andreas:hecticfallacy123@lyche.2h5du.mongodb.net/FireWatch?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, ()=> {
