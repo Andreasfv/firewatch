@@ -39,7 +39,6 @@ export default function MCanvas(props) {
             }
         },
         onCompleted: (data) => {
-            console.log(data);
             loadMap();
         },
     })
@@ -47,14 +46,13 @@ export default function MCanvas(props) {
     //Fetches all fires, adds all fires to their coordinates in a matrice. Then creates div blocks that covers
     //the areas of the map.
     const loadMap = () => {
-        console.log(`"reload map called, status of loading: ${loading}"`)
+        console.log("Load map fired", loading, reload)
         if(!loading){
             let tempMatrice = arrayFill();
             data.getAllFires.map((fire) => {
                 //Dette gir ikke mening, det blir riktig hvis jeg gjør det motsatt av all fornuft?? y, x blir x, y etterpå??
                 tempMatrice[fire.Y - 1][fire.X - 1].push(fire);
             })
-            console.log(tempMatrice)
             let blockCollection = [];
             for (let x = 0; x < 9; x++) {
                 let row = []
@@ -72,35 +70,30 @@ export default function MCanvas(props) {
                     } else {
                         blockProps.data = tempMatrice[x][y];
                     }
-                    
                     row.push(<MapBlock props = {blockProps}/>)
                 }
-                blockCollection.push(<div keys={"row"+x} className = "row" >{row}</div>);
+                //Får individual Key error, idk why
+                blockCollection.push(<div key={x* Math.random()*Math.random()} className = "row" >{row}</div>);
             }
-            console.log(blockCollection)
             setBlocks(blockCollection);   
         }
     }
 
     useEffect(()=> {
-        console.log("Should run twice", loading)
         loadMap();
     }, [data])
+
     useEffect(() => {
-            console.log("REFETCHING")
             if(refetch) {
                 refetch()
             }
     }, [reload])
 
-    useEffect(()=>{
-
-    }, blocks)
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error: {error}</p>
     
     return (
-        <div className="map">
+        <div key={"map"}className="map">
             {blocks}
         </div>
     )

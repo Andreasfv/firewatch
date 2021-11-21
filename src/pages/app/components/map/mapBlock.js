@@ -4,7 +4,6 @@ import { of } from "zen-observable";
 
 export default function MapBlock(props) {
     props = props.props
-    console.log(props.data)
     const blockRef = createRef();
 
     const onBlockClick = () => {
@@ -19,7 +18,7 @@ export default function MapBlock(props) {
         <div onClick = {()=> {onBlockClick()}}
             onMouseEnter = {()=> {onBlockEnter()}}
              className="block" 
-             key={props._id}>
+             key={Math.random(1000) * Math.random(100)}>
                  {props.data.length > 0 ? props.data.length : null}
         </div>
     )
