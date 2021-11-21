@@ -1,7 +1,6 @@
 import validateFireData from "./validateData"
 
 const makeStats = (data) => {
-
     let stats = {
         avgRH: 0,
         avgArea: 0,
@@ -23,7 +22,7 @@ const makeStats = (data) => {
     }
 
     for (const fire of data) {
-        if(validateFireData(fire)){
+        if(validateFireData(fire).value){
             stats.avgRH += fire.RH;
             stats.avgArea += fire.area;
             stats.avgWind += fire.wind;
@@ -39,15 +38,11 @@ const makeStats = (data) => {
         } else {
             continue;
         }
-
     }
-
     stats.avgRH = (stats.avgRH / data.length).toFixed(2);
     stats.avgArea = (stats.avgArea / data.length).toFixed(2);
     stats.avgWind = (stats.avgWind / data.length).toFixed(2);
     stats.avgTemp = (stats.avgTemp / data.length).toFixed(2);
-
-    console.log(stats)
     return stats;
 }
 

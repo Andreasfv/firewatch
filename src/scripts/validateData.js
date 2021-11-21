@@ -10,9 +10,9 @@ const validateFireData = (data) => {
         if(typeof data !== "object" && !Array.isArray(data)) throw new Error("Invalid variable type, not an object")
         if (data == undefined || data == null) throw new Error("Invalid variable type, not an object")
 
-        //Janky non-scalable løsning, kan sikkert kjøre en include loop på fireKeys
-        if(Object.keys(data).length != 11) throw new Error("Invalid object keys")
-
+        for (let key of Object.keys(data)){
+            if(!fireKeys.includes(key) && key == " ") throw new Error(`${key} is an invalid object key`)
+        }
         if (isNaN(data.RH)) throw new Error("RH is not a number")
         if (data.RH < 15 || data.RH >= 100) throw new Error("RH is invalid, must be between 15 and 100")
 
@@ -38,10 +38,16 @@ const validateFireData = (data) => {
 
     } catch (error) {
         console.log(error);
-        return false
+        return {
+                value: false,
+                error: error
+                };
     }
     
-    return true;
+    return {
+            value: true,
+            error: null,
+            }
 }
 
 export default validateFireData;

@@ -4,10 +4,14 @@ export const fireSchema = new mongoose.Schema({
     X: {
         type: Number,
         required: true,
+        min: 1,
+        max: 9,
     },
     Y: {
         type: Number,
         required: true,
+        min: 1,
+        max: 9
     },
     month: {
         type: String,
@@ -37,22 +41,32 @@ export const fireSchema = new mongoose.Schema({
     },
     temp: {
         type: Number,
-        required: true
+        required: true,
+        min: 2.2,
+        max: 33.3
     },
     RH: {
         type: Number,
-        required: true
+        required: true,
+        min: 15,
+        max: 100,
     },
     wind: {
         type: Number,
-        required: true
+        required: true,
+        min: 0.4,
+        max: 9.4
     },
     rain: {
         type: Number,
-        required: true
+        required: true,
+        min: 0,
+        max: 6.4
     },
     area: {
         type: Number,
-        required: true
+        required: true,
+        min: 0,
+        max: 1090.84
     }
 })
