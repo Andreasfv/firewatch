@@ -1,7 +1,7 @@
-The application provides an easy overview of fire locations and their average, min and maximum data values for the documented wildfires. By hovering the different regionsdata will be shown in a box underneath the map. 
+The application provides an easy overview of fire locations and their average, min and maximum data values for the documented wildfires. By hovering the different regions data will be shown in a box underneath the map. In addition adding new fire data is easily done by clicking add new fire data which pops up an interface for doing so.
 
 
-This solution solves the difficulty of using tables to visualize the data. This solution makes seeing where most wildfires physically happens and the average size, humidity, relative humidity and rain for the location easier. 
+This solution solves the difficulty of using tables to visualize the data. This makes seeing where most wildfires physically happens and the average size, humidity, relative humidity and rain for the location easier. 
 
 To run the application you need to download the folder FireWatch_andreas.
 Path to /FireWatch_andreas/ and then run: 
