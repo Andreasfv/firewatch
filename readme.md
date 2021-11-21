@@ -3,8 +3,7 @@ The application provides an easy overview of fire locations and their average, m
 
 This solution solves the difficulty of using tables to visualize the data. This makes seeing where most wildfires physically happens and the average size, humidity, relative humidity and rain for the location easier. 
 
-To run the application you need to download the folder FireWatch_andreas.
-Path to /firewatch/ and then run: 
+To run the application you need to download the folder and path to it in a terminal then follow the instructions:
 1. npm install
 2. npm run server
 3. open an additional terminal at the same folder location
